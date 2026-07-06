@@ -1,12 +1,5 @@
 #include<bits/stdc++.h> 
 using namespace std;
-typedef long long LL ;
-
-using VLL = vector<LL>;
-
-#define pb push_back
-
-#define sz(x) (int)(x).size()
 
 void ALU_decimal_into_binary(int n) {
     if (n == 0) 
@@ -51,7 +44,7 @@ int ALU_binary_to_decimal ( string binary )
         }
     }
 
-    for ( int i = 0 ; i < sz(binary) ; i++)
+    for ( int i = 0 ; i <binary.length() ; i++)
     { 
         // following bitwise we shift bits to left so there would be 0 in the rightmost position
         decimal <<=1 ; 
@@ -82,7 +75,7 @@ int ALU_bitwise_addition(int a , int b )
 
 int ALU_bitwise_subtraction ( int a , int b )
 { 
-    // since ALU does not have the concept of substraction it looks at a -b as a + (-b) 
+    // since ALU does not have the concept of substraction it looks at a-b as a + (-b) 
     // we need to do two's complement to b 
 
     // doing two's complement 
@@ -102,7 +95,7 @@ int ALU_bitwise_subtraction ( int a , int b )
 
 int ALU_bitwise_multiplication ( int a , int b ) 
 { 
-    LL result = 0 ; 
+    int result = 0 ; 
     while ( b!= 0 )
     { 
         if (b&1) 
@@ -146,9 +139,7 @@ ALU_Output ALU_flags_calculate ( int a , int b )
 
 int main () 
 {   
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
+    // Testing arithmetic functions
     cout << ALU_bitwise_subtraction(5,4) << "\n" ; 
     
     cout << ALU_bitwise_addition(2,3) << "\n" ; 
@@ -156,10 +147,14 @@ int main ()
     cout << ALU_bitwise_addition(-2,-3) << "\n" ; 
     
     cout << ALU_bitwise_addition(-3,2) << "\n" ; 
+
+    // Testing Decimal To Binary conversions
     
     ALU_decimal_into_binary(5) ; 
 
     ALU_decimal_into_binary(-5) ; 
+
+    // testing Binary to Decimal conversions
 
     // 101 is 5 in decimal 
     cout << ALU_binary_to_decimal("101") << "\n"; 
@@ -167,7 +162,11 @@ int main ()
     // 1011 is 4 bit representation of -5 
     cout << ALU_binary_to_decimal("1011") << "\n" ; 
 
+    // Testing Multiplcation function
+
     cout << ALU_bitwise_multiplication(3 , 3 ) ; 
+
+    // Testing Hardware Status Flags
 
     int two_billion = 2000000000 ; 
     int another_two_billion = 2000000000; 
