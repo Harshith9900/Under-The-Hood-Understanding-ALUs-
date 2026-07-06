@@ -15,3 +15,6 @@ This project is a software simulation of a physical CPU's Arithmetic Logic Unit 
 ## How It Works
 The core of the simulator relies on a simulated half-adder circuit using `AND` (`&`) and `XOR` (`^`) gates to calculate sums and carries, combined with bitwise shifting (`<<`, `>>`) to move data through the virtual registers.
 
+### Some Examples 
+Some examples of the functions are given in main func if you intended to test the code you can directly download / copy the code and run it :> 
+
